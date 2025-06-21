@@ -6,66 +6,74 @@
   <title>YuwaaTach - All Digital Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary py-2 shadow-sm">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" style="font-size:2rem; letter-spacing:1px; margin-right:4.5rem;" href="#">YuwaaTech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap:0.1rem;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Services
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Web Designing</a></li>
-              <li><a class="dropdown-item" href="#">Web Hosting</a></li>
-              <li><a class="dropdown-item" href="#">Video Editing</a></li>
-              <li><a class="dropdown-item" href="#">Graphics Designing</a></li>
-              <li><a class="dropdown-item" href="#">Thumbnail Designing</a></li>
-              <li><a class="dropdown-item" href="#">Cyber SEcurity</a></li>
-              <li><a class="dropdown-item" href="#">Social Media Management</a></li>
-              <li><a class="dropdown-item" href="#">SEO</a></li>
-              <li><a class="dropdown-item" href="#">Content Writing</a></li>
-              <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">All Digital Services</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gadjets.html">Gadjets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-        <form class="d-flex me-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="min-width:180px;"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-outline-primary">Login</a>
-          <a href="#" class="btn btn-primary">Register</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <!-- Brand Logo Container - Positioned at far left on large screens -->
+            <div class="brand-container">
+                <a class="brand-logo" href="#">
+                    <div class="logo-icon">Y</div>
+                    <div class="logo-text">uwaaTech</div>
+                </a>
+            </div>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-code me-2"></i> Web Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-server me-2"></i> Web Hosting</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-video me-2"></i> Video Editing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-paint-brush me-2"></i> Graphics Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-image me-2"></i> Thumbnail Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield-alt me-2"></i> Cyber Security</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-hashtag me-2"></i> Social Media Management</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-search me-2"></i> SEO</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-pen-fancy me-2"></i> Content Writing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-bullhorn me-2"></i> Digital Marketing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cubes me-2"></i> All Digital Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gadjets.html">Gadjets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Action Buttons -->
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
   <!-- Navbar End -->
 
   <!-- Hero Section -->
@@ -90,6 +98,16 @@
       <h1>YuwaaTech</h1>
       <p>Your One-Stop Solution for All Digital Services</p>
       <a href="#services" class="cta-btn">Explore Services</a>
+      
+      <!-- Search Bar -->
+      <div class="hero-search">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search for services, projects, or solutions...">
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
   <!-- Hero Section End -->
@@ -132,12 +150,18 @@
       </div>
     </div>
   </section>
+  <!-- Services Section End -->
+
+  <!-- About Section -->
   <section id="about" class="about-section">
     <div class="container">
       <h2>About YuwaaTach</h2>
       <p>YuwaaTach is a forward-thinking startup dedicated to empowering individuals and businesses with top-notch digital services. Our team of experts brings creativity, technical skill, and a passion for innovation to every project.</p>
     </div>
   </section>
+  <!-- About Section End -->
+
+  <!-- contact Section -->
   <section id="contact" class="contact-section">
     <div class="container">
       <h2>Contact Us</h2>

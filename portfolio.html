@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuwaaTech - Premium Digital Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --dark-color: #1e1b4b;
+            --light-color: #f8fafc;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Brand Logo Styles */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover .logo-icon {
+            transform: rotate(-10deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .brand-logo:hover .logo-text {
+            color: var(--primary-color);
+        }
+
+        /* Navigation Links */
+        .navbar-nav .nav-link {
+            position: relative;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: all 0.2s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+            position: absolute;
+            left: 1.25rem;
+            bottom: 0;
+            border-radius: 3px;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link:focus::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 2.5rem);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 1.5rem;
+            transition: all 0.2s;
+            border-radius: 4px;
+            margin: 0 0.5rem;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item.active {
+            background: var(--primary-color);
+            color: white !important;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-color);
+            border-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 992px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+            }
+
+            .brand-container {
+                margin-right: 3rem;
+                flex-shrink: 0;
+            }
+
+            .navbar-collapse {
+                display: flex !important;
+                flex-grow: 1;
+                justify-content: space-between;
+            }
+
+            .navbar-nav {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .brand-container {
+                margin-right: auto;
+            }
+
+            .logo-text {
+                font-size: 1.75rem;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .navbar-collapse {
+                padding-top: 1rem;
+            }
+
+            .d-flex {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* Portfolio Section Styles */
+        .portfolio-section {
+            background: #fff;
+        }
+
+        .portfolio-item {
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(79, 70, 229, 0.10);
+            z-index: 2;
+        }
+
+        .portfolio-item img {
+            border-radius: 18px 18px 0 0;
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+            transition: filter 0.3s;
+        }
+
+        .portfolio-item:hover img {
+            filter: brightness(0.92) saturate(1.2);
+        }
+
+        .portfolio-item .card-body {
+            padding: 1.25rem 1rem 1.5rem 1rem;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item p {
+            font-size: 0.98rem;
+            color: #555;
+        }
+
+        .portfolio-item .badge {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            padding: 0.4em 0.9em;
+            border-radius: 12px;
+        }
+
+        .portfolio-header {
+            background: url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            position: relative;
+            padding: 5.4rem 0;
+        }
+
+        .portfolio-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-header h1 {
+            font-weight: 800;
+            /* Make font bolder */
+            font-size: 4.5rem;
+            /* Increase font size */
+            background: -webkit-linear-gradient(45deg, #FF9D3D, #A1E3F9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow */
+        }
+
+        .cta-section {
+            background-color: #f8f9fa;
+            color: #343a40;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .cta-section .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .cta-section .btn-primary:hover {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 991px) {
+            .portfolio-item img {
+                height: 160px;
+            }
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: #2c2f3b;
+            /* A dark slate blue from the image */
+            color: #ffffff;
+            padding: 50px 0;
+        }
+
+        .site-footer h5 {
+            color: #6a994e;
+            /* A shade of green from the image */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .site-footer p {
+            color: #adb5bd;
+            /* A light gray for text */
+            line-height: 1.7;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-about,
+        .footer-contact,
+        .footer-follow {
+            flex: 1;
+        }
+
+        .footer-about {
+            flex-basis: 40%;
+            min-width: 250px;
+        }
+
+        .footer-contact {
+            flex-basis: 30%;
+            min-width: 250px;
+        }
+
+        .footer-follow {
+            flex-basis: 20%;
+            min-width: 150px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #6a994e;
+            /* Green on hover */
+        }
+
+        .footer-divider {
+            border-color: #495057;
+            /* A slightly lighter gray for the divider */
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-copyright p {
+            color: #adb5bd;
+            margin: 0;
+        }
+
+        /* end footer */
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <!-- Brand Logo Container - Positioned at far left on large screens -->
+            <div class="brand-container">
+                <a class="brand-logo" href="#">
+                    <div class="logo-icon">Y</div>
+                    <div class="logo-text">uwaaTech</div>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-code me-2"></i> Web
+                                    Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-server me-2"></i> Web Hosting</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-video me-2"></i> Video Editing</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-paint-brush me-2"></i> Graphics
+                                    Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-image me-2"></i> Thumbnail
+                                    Designing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield-alt me-2"></i> Cyber
+                                    Security</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-hashtag me-2"></i> Social Media
+                                    Management</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-search me-2"></i> SEO</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-pen-fancy me-2"></i> Content
+                                    Writing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-bullhorn me-2"></i> Digital
+                                    Marketing</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cubes me-2"></i> All Digital
+                                    Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gadjets.html">Gadjets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header portfolio-header text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Our Work</h1>
+            <p class="lead typing-effect-portfolio"></p>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Web Development Project">
+                        <div class="card-body">
+                            <h3 class="h5">Web Development Project</h3>
+                            <p>Custom website for a local business, enhancing their online presence and boosting sales.
+                            </p>
+                            <span class="badge bg-primary">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="video.jpg" class="img-fluid rounded-top" alt="Video Editing Project">
+                        <div class="card-body">
+                            <h3 class="h5">Video Editing Project</h3>
+                            <p>Professional video editing for a promotional campaign, increasing engagement by 40%.</p>
+                            <span class="badge bg-success">Video Editing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Graphics Design Project">
+                        <div class="card-body">
+                            <h3 class="h5">Graphics Design Project</h3>
+                            <p>Creative graphics and thumbnails for social media marketing, driving brand awareness.</p>
+                            <span class="badge bg-warning text-dark">Graphics Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Cyber Security Audit">
+                        <div class="card-body">
+                            <h3 class="h5">Cyber Security Audit</h3>
+                            <p>Comprehensive security audit and protection for a fintech startup, ensuring data safety.
+                            </p>
+                            <span class="badge bg-danger">Cyber Security</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Social Media Campaign">
+                        <div class="card-body">
+                            <h3 class="h5">Social Media Campaign</h3>
+                            <p>Managed and grew a brand's social media, reaching 10k+ followers in 3 months.</p>
+                            <span class="badge bg-info text-dark">Social Media</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Team Collaboration">
+                        <div class="card-body">
+                            <h3 class="h5">Team Collaboration</h3>
+                            <p>Our team worked with a global client to deliver a full suite of digital services, from
+                                design to deployment.</p>
+                            <span class="badge bg-secondary">Team Project</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="UI/UX Design">
+                        <div class="card-body">
+                            <h3 class="h5">Mobile App UI/UX</h3>
+                            <p>Intuitive and beautiful user interface design for a new-age social networking app.</p>
+                            <span class="badge" style="background-color: #8E44AD;">UI/UX Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="E-commerce Solution">
+                        <div class="card-body">
+                            <h3 class="h5">E-commerce Platform</h3>
+                            <p>A complete e-commerce solution for a fashion brand, with a custom backend and payment
+                                integration.</p>
+                            <span class="badge" style="background-color: #E67E22;">E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Branding Identity">
+                        <div class="card-body">
+                            <h3 class="h5">Corporate Branding</h3>
+                            <p>Developed a new brand identity, including logo, color palette, and style guide for a tech
+                                startup.</p>
+                            <span class="badge" style="background-color: #3498DB;">Branding</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Content Strategy">
+                        <div class="card-body">
+                            <h3 class="h5">Content Strategy</h3>
+                            <p>Created a comprehensive content strategy that doubled organic traffic in six months for a
+                                SaaS company.</p>
+                            <span class="badge" style="background-color: #2ECC71;">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Data Analytics Dashboard">
+                        <div class="card-body">
+                            <h3 class="h5">Analytics Dashboard</h3>
+                            <p>Designed and built a custom data analytics dashboard to track KPIs for a marketing
+                                agency.</p>
+                            <span class="badge" style="background-color: #F1C40F; color: #000;">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80"
+                            class="img-fluid rounded-top" alt="Digital Marketing Campaign">
+                        <div class="card-body">
+                            <h3 class="h5">Digital Marketing Campaign</h3>
+                            <p>Executed a multi-channel digital marketing campaign that resulted in a 300% ROI.</p>
+                            <span class="badge" style="background-color: #E74C3C;">Digital Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section text-center py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold">Let's Build Something Amazing Together</h2>
+            <p class="lead my-4">Have a project in mind? We'd love to hear about it. Contact us to get started!</p>
+            <a href="#contact-footer" class="btn btn-primary btn-lg px-5 shadow-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h5>About Us</h5>
+                    <p>We are a team of passionate students dedicated to revolutionizing digital services in Nepal.</p>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contact</h5>
+                    <p>Email: info@yuwa.tech<br>Phone: +977 9841234567</p>
+                </div>
+                <div class="footer-follow">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright">
+                <p>&copy; 2025 YuwaaTech. Empowering Digital Nepal.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer End -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -224,8 +224,9 @@ body {
 }
 
 .about-section {
-  background: #fff;
-  padding: 60px 0 40px 0;
+  background: #f8fafc;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 .about-section h2 {
   text-align: center;
@@ -239,6 +240,30 @@ body {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
+}
+.about-gallery .about-img {
+  object-fit: cover;
+  aspect-ratio: 1.2/1;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.about-gallery .about-img:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 8px 32px rgba(79,70,229,0.10);
+}
+
+.team-info img {
+  border: 3px solid #e0e7ff;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.team-info img:hover {
+  border: 3px solid #4f46e5;
+  box-shadow: 0 4px 24px rgba(79,70,229,0.15);
+}
+.team-info .fw-bold {
+  font-size: 1.08rem;
+}
+.team-info small {
+  color: #6b7280;
 }
 
 .contact-section {

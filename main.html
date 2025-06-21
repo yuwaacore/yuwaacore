@@ -11,24 +11,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light py-3 shadow-sm sticky-top bg-white">
         <div class="container">
-            <!-- Brand Logo Container - Positioned at far left on large screens -->
-            <div class="brand-container">
-                <a class="brand-logo" href="#">
-                    <div class="logo-icon">Y</div>
-                    <div class="logo-text">uwaaTech</div>
-                </a>
-            </div>
+            <!-- Brand on the left -->
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="d-flex align-items-center">
+                    <span style="color: white; background: var(--primary-color); padding: 0 0.5rem; border-radius: 8px; margin-right: 0.5rem;">Y</span>
+                    <span>uwaaTech</span>
+                </span>
+            </a>
             
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <!-- Navigation Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -41,21 +41,21 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                            Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-code me-2"></i> Web Designing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-server me-2"></i> Web Hosting</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-video me-2"></i> Video Editing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-paint-brush me-2"></i> Graphics Designing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-image me-2"></i> Thumbnail Designing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield-alt me-2"></i> Cyber Security</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-hashtag me-2"></i> Social Media Management</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-search me-2"></i> SEO</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-pen-fancy me-2"></i> Content Writing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-bullhorn me-2"></i> Digital Marketing</a></li>
+                            <li><a class="dropdown-item" href="#">Web Designing</a></li>
+                            <li><a class="dropdown-item" href="#">Web Hosting</a></li>
+                            <li><a class="dropdown-item" href="#">Video Editing</a></li>
+                            <li><a class="dropdown-item" href="#">Graphics Designing</a></li>
+                            <li><a class="dropdown-item" href="#">Thumbnail Designing</a></li>
+                            <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                            <li><a class="dropdown-item" href="#">Social Media Management</a></li>
+                            <li><a class="dropdown-item" href="#">SEO</a></li>
+                            <li><a class="dropdown-item" href="#">Content Writing</a></li>
+                            <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cubes me-2"></i> All Digital Services</a></li>
+                            <li><a class="dropdown-item" href="#">All Digital Services</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -66,10 +66,10 @@
                     </li>
                 </ul>
                 
-                <!-- Action Buttons -->
+                <!-- Login/Register buttons -->
                 <div class="d-flex gap-3">
-                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
+                    <a href="#" class="btn btn-outline-primary px-4">Login</a>
+                    <a href="#" class="btn btn-primary px-4">Register</a>
                 </div>
             </div>
         </div>
@@ -111,54 +111,7 @@
     </div>
   </header>
   <!-- Hero Section End -->
-  
-  <!-- About Section -->
-  <section id="about" class="about-section py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="about-gallery d-flex flex-wrap gap-3 justify-content-center">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" class="rounded shadow about-img" alt="Team Coding" style="width: 48%; max-width: 220px;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="rounded shadow about-img" alt="Creative Design" style="width: 48%; max-width: 220px;">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="rounded shadow about-img" alt="Video Editing" style="width: 48%; max-width: 220px;">
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" class="rounded shadow about-img" alt="Digital Workspace" style="width: 48%; max-width: 220px;">
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">About YuwaaTech</h2>
-          <p class="lead mb-3">YuwaaTech is a forward-thinking startup dedicated to empowering individuals and businesses with top-notch digital services. Our passionate team brings creativity, technical skill, and innovation to every project.</p>
-          <ul class="list-unstyled mb-4">
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Web Development & Hosting</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Video Editing & Creative Design</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Cyber Security & Social Media Management</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> SEO, Content Writing & Digital Marketing</li>
-          </ul>
-          <div class="team-info">
-            <h4 class="fw-semibold mb-3">Meet Our Team</h4>
-            <div class="row g-3">
-              <div class="col-6 col-md-4 text-center">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-2 shadow" width="70" alt="Amit Sharma">
-                <div class="fw-bold">Amit Sharma</div>
-                <small class="text-muted">Web Lead</small>
-              </div>
-              <div class="col-6 col-md-4 text-center">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mb-2 shadow" width="70" alt="Priya Verma">
-                <div class="fw-bold">Priya Verma</div>
-                <small class="text-muted">Design & Video</small>
-              </div>
-              <div class="col-6 col-md-4 text-center">
-                <img src="https://randomuser.me/api/portraits/men/65.jpg" class="rounded-circle mb-2 shadow" width="70" alt="Rahul Singh">
-                <div class="fw-bold">Rahul Singh</div>
-                <small class="text-muted">Security & Marketing</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Section End -->
-   
+
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="container">
@@ -199,7 +152,7 @@
   </section>
   <!-- Services Section End -->
 
-    <!-- Testimonials Section -->
+  <!-- Testimonials Section -->
   <section class="testimonials-section py-5">
     <div class="container">
       <h2 class="text-center mb-5">What Our Clients Say</h2>
@@ -231,10 +184,15 @@
       </div>
     </div>
   </section>
-    <!-- Testimonials Section End --> 
+    <!-- Testimonials Section End -->
 
-
-  <!-- contact Section -->
+    <!-- About and Contact Sections -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About YuwaaTach</h2>
+      <p>YuwaaTach is a forward-thinking startup dedicated to empowering individuals and businesses with top-notch digital services. Our team of experts brings creativity, technical skill, and a passion for innovation to every project.</p>
+    </div>
+  </section>
   <section id="contact" class="contact-section">
     <div class="container">
       <h2>Contact Us</h2>

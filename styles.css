@@ -562,3 +562,52 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Portfolio Section Styles */
+.portfolio-section {
+  background: #fff;
+}
+.portfolio-item {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.portfolio-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(79,70,229,0.10);
+  z-index: 2;
+}
+.portfolio-item img {
+  border-radius: 18px 18px 0 0;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  transition: filter 0.3s;
+}
+.portfolio-item:hover img {
+  filter: brightness(0.92) saturate(1.2);
+}
+.portfolio-item .card-body {
+  padding: 1.25rem 1rem 1.5rem 1rem;
+}
+.portfolio-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.portfolio-item p {
+  font-size: 0.98rem;
+  color: #555;
+}
+.portfolio-item .badge {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding: 0.4em 0.9em;
+  border-radius: 12px;
+}
+@media (max-width: 991px) {
+  .portfolio-item img {
+    height: 160px;
+  }
+}

@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YuwaaTach - All Digital Services</title>
+    <title>Web Hosting Services - YuwaaTech</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
     <style>
         :root {
             --primary-color: #4f46e5;
@@ -195,115 +199,6 @@
             }
         }
 
-        /* end navigation */
-        /* Body Styles */
-        .about-header {
-            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            position: relative;
-            padding: 6rem 0;
-        }
-
-        .about-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .about-header .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-header h1 {
-            font-weight: 800;
-            font-size: 4.5rem;
-            background: -webkit-linear-gradient(45deg, #A1E3F9, #FF9D3D);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .our-story-section {
-            background-color: #ffffff;
-        }
-
-        .our-vision-section {
-            background-color: #f8f9fa;
-        }
-
-        .vision-card {
-            background-color: #ffffff;
-            border: 1px solid #e9ecef;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .vision-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .vision-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-        }
-
-        .team-section {
-            padding: 80px 0;
-        }
-
-        .team-member .card-img-top {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            margin-top: -50px;
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover .card-img-top {
-            transform: scale(1.1);
-        }
-
-        .team-member .card-body {
-            padding-top: 20px;
-        }
-
-        .team-member .card-title {
-            font-weight: 700;
-        }
-
-        .team-social-icons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .team-social-icons a {
-            font-size: 1.3rem;
-            color: #495057;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .team-social-icons a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-member {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
         /* Footer Styles */
         .site-footer {
             background-color: #2c2f3b;
@@ -382,6 +277,37 @@
         }
 
         /* end footer */
+        .web-hosting-hero {
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 7rem 0 5rem 0;
+            position: relative;
+        }
+
+        .web-hosting-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .web-hosting-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .web-hosting-hero h1,
+        .web-hosting-hero p {
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .featured-projects-section .project-card img {
+            height: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -391,26 +317,24 @@
         <div class="container">
             <!-- Brand Logo Container - Positioned at far left on large screens -->
             <div class="brand-container">
-                <a class="brand-logo" href="#">
+                <a class="brand-logo" href="index.html">
                     <div class="logo-icon">Y</div>
                     <div class="logo-text">uwaaTech</div>
                 </a>
             </div>
-
             <!-- Mobile Toggle Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <!-- Navigation Content -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Portfolio</a>
@@ -453,10 +377,9 @@
                         <a class="nav-link" href="gadjets.html">Gadjets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-
                 <!-- Action Buttons -->
                 <div class="d-flex gap-3">
                     <a href="#" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
@@ -465,126 +388,107 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Our Story Section -->
-    <section class="our-story-section py-5">
+    <!-- Hero/Header -->
+    <header class="web-hosting-hero text-center">
         <div class="container">
-            <div class="row align-items-center">
+            <h1 class="display-4 fw-bold mb-3">Web Hosting</h1>
+            <p class="lead mb-0">Reliable, secure, and scalable hosting solutions for your online presence.</p>
+        </div>
+    </header>
+
+    <!-- Service Description -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">Our Story</h2>
-                    <p class="lead">Founded by a group of passionate and forward-thinking students in Nepal, YuwaaTech
-                        was born from a shared vision: to revolutionize the digital landscape. We saw a future where
-                        technology wasn't just a tool, but a catalyst for growth, innovation, and empowerment.</p>
-                    <p>We are a team of creators, strategists, and innovators dedicated to turning your ideas into
-                        digital realities. Our journey is fueled by a relentless pursuit of excellence and a commitment
-                        to delivering solutions that are not only effective but also inspiring.</p>
+                    <h2 class="fw-bold mb-3">What We Offer</h2>
+                    <p class="lead">We provide fast, secure, and affordable web hosting for businesses, startups, and
+                        individuals. Our hosting solutions are designed for performance, uptime, and peace of mind.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Shared, VPS, and
+                            dedicated hosting</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Free SSL & daily backups
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 24/7 technical support
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> One-click app installs
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Scalable resources</li>
+                    </ul>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1050&q=80"
-                        class="img-fluid rounded shadow-lg" alt="Our team collaborating">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                        class="img-fluid rounded shadow" alt="Web Hosting Illustration">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Vision Section -->
-    <section class="our-vision-section py-5">
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center display-5 fw-bold mb-5">Our Vision</h2>
+            <h2 class="text-center fw-bold mb-5">Why Choose YuwaaTech?</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="vision-card text-center p-4 h-100">
-                        <div class="vision-icon mb-3">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h4 class="fw-bold">Innovation</h4>
-                        <p>To be at the forefront of digital innovation, pioneering new technologies and strategies that
-                            drive transformative results for our clients.</p>
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3"><i class="fas fa-server fa-2x text-primary"></i></div>
+                        <h4 class="fw-bold">Performance</h4>
+                        <p>Our servers are optimized for speed and reliability, ensuring your website is always online
+                            and fast.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="vision-card text-center p-4 h-100">
-                        <div class="vision-icon mb-3">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4 class="fw-bold">Empowerment</h4>
-                        <p>To empower businesses of all sizes to thrive in the digital age by providing accessible,
-                            effective, and scalable solutions.</p>
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3"><i class="fas fa-shield-alt fa-2x text-primary"></i></div>
+                        <h4 class="fw-bold">Security</h4>
+                        <p>We prioritize your data security with free SSL, daily backups, and proactive monitoring.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="vision-card text-center p-4 h-100">
-                        <div class="vision-icon mb-3">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4 class="fw-bold">Global Reach</h4>
-                        <p>To extend our impact beyond borders, establishing YuwaaTech as a globally recognized leader
-                            in the tech industry.</p>
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3"><i class="fas fa-headset fa-2x text-primary"></i></div>
+                        <h4 class="fw-bold">Support</h4>
+                        <p>Our support team is available 24/7 to help you with any hosting issues or questions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet Our Team Section -->
-    <section id="team" class="team-section py-5 bg-light">
+    <!-- Featured Projects -->
+    <section class="featured-projects-section py-5">
         <div class="container">
-            <h2 class="text-center display-5 fw-bold mb-5">Meet Our Team</h2>
+            <h2 class="text-center fw-bold mb-5">Featured Hosting Projects</h2>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-member card h-100 text-center border-0 shadow-sm">
-                        <img src="ghanu.jpg" class="card-img-top rounded-circle mx-auto mt-4" alt="Ghanshyam Ku. Gupta">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card card border-0 shadow-sm h-100">
+                        <img src="ecommerce.jpg" class="card-img-top" alt="E-commerce Hosting">
                         <div class="card-body">
-                            <h5 class="card-title">Ghanshyam Ku. Gupta</h5>
-                            <p class="card-text text-muted">Project Manager</p>
-                            <div class="team-social-icons mt-3">
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-github"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            <h3 class="h5">E-commerce Hosting</h3>
+                            <p class="card-text">High-availability hosting for a growing online store, with daily
+                                backups and SSL.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-member card h-100 text-center border-0 shadow-sm">
-                        <img src="siru.jpg" class="card-img-top rounded-circle mx-auto mt-4" alt="Sagar Bk">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Hosting Project 2">
                         <div class="card-body">
-                            <h5 class="card-title">Sagar Bk</h5>
-                            <p class="card-text text-muted">CyberSecurity</p>
-                            <div class="team-social-icons mt-3">
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-github"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            <h3 class="h5">Startup Launch</h3>
+                            <p class="card-text">Affordable, scalable hosting for a startup's MVP, with one-click app
+                                installs.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-member card h-100 text-center border-0 shadow-sm">
-                        <img src="nabin.jpg" class="card-img-top rounded-circle mx-auto mt-4" alt="Nabin Paudel">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Hosting Project 3">
                         <div class="card-body">
-                            <h5 class="card-title">Nabin Paudel</h5>
-                            <p class="card-text text-muted">Social Media</p>
-                            <div class="team-social-icons mt-3">
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-github"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fas fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-member card h-100 text-center border-0 shadow-sm">
-                        <img src="Gulshan.jpg" class="card-img-top rounded-circle mx-auto mt-4" alt="Gulshan ku. Bk">
-                        <div class="card-body">
-                            <h5 class="card-title">Gulshan Ku. Bk</h5>
-                            <p class="card-text text-muted">Full stack developer</p>
-                            <div class="team-social-icons mt-3">
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fab fa-github"></i></a>
-                                <a href="#" class="text-dark mx-2"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            <h3 class="h5">Portfolio Hosting</h3>
+                            <p class="card-text">Fast, secure hosting for a creative professional's portfolio and blog.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -592,9 +496,17 @@
         </div>
     </section>
 
+    <!-- All Digital Services Subtopic Section -->
+    <section class="all-digital-services-cta py-5 bg-light text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Explore All Our Digital Services</h2>
+            <p class="lead mb-4">Discover the full range of digital solutions we offer to help your business or project
+                grow.</p>
+        </div>
+    </section>
 
-    <!-- footer -->
-    <footer class="site-footer">
+    <!-- Footer -->
+    <footer id="contact-footer" class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
@@ -621,10 +533,7 @@
             </div>
         </div>
     </footer>
-    <!-- footer End -->
-
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

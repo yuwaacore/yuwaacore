@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuwaaTech - Gadgets & Devices</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --dark-color: #1e1b4b;
+            --light-color: #f8fafc;
+        }
+
+        body {
+            background: var(--light-color);
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Brand Logo Styles */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover .logo-icon {
+            transform: rotate(-10deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .brand-logo:hover .logo-text {
+            color: var(--primary-color);
+        }
+
+        /* Navigation Links */
+        .navbar-nav .nav-link {
+            position: relative;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: all 0.2s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+            position: absolute;
+            left: 1.25rem;
+            bottom: 0;
+            border-radius: 3px;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link:focus::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 2.5rem);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 1.5rem;
+            transition: all 0.2s;
+            border-radius: 4px;
+            margin: 0 0.5rem;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item.active {
+            background: var(--primary-color);
+            color: white !important;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-color);
+            border-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 992px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+            }
+
+            .brand-container {
+                margin-right: 3rem;
+                flex-shrink: 0;
+            }
+
+            .navbar-collapse {
+                display: flex !important;
+                flex-grow: 1;
+                justify-content: space-between;
+            }
+
+            .navbar-nav {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .brand-container {
+                margin-right: auto;
+            }
+
+            .logo-text {
+                font-size: 1.75rem;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .navbar-collapse {
+                padding-top: 1rem;
+            }
+
+            .d-flex {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+
+        .gadgets-hero {
+            background: linear-gradient(120deg, #4f46e5 60%, #1e1b4b 100%);
+            color: #fff;
+            padding: 60px 0 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gadgets-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            animation: fadeInDown 1s;
+        }
+
+        .gadgets-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gadgets-gallery {
+            margin-top: -40px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .gadget-card {
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(79, 70, 229, 0.07);
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+            position: relative;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeInUp 1s;
+        }
+
+        .gadget-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(79, 70, 229, 0.13);
+        }
+
+        .gadget-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary-color);
+            transition: filter 0.3s;
+        }
+
+        .gadget-card:hover .gadget-img {
+            filter: brightness(0.92) saturate(1.2);
+        }
+
+        .gadget-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 18px 0 8px 0;
+            color: var(--dark-color);
+        }
+
+        .gadget-desc {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        .gadget-badges {
+            margin-bottom: 10px;
+        }
+
+        .gadget-badges .badge {
+            margin-right: 6px;
+            font-size: 0.85rem;
+        }
+
+        .gadget-footer {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+        }
+
+        .gadget-btn {
+            margin-top: 10px;
+            border-radius: 20px;
+            font-size: 0.98rem;
+            padding: 0.4rem 1.3rem;
+        }
+
+        .gadget-details {
+            display: none;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+        }
+
+        .gadget-card.expanded .gadget-details {
+            display: block;
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        .gadget-card.expanded {
+            min-height: 520px;
+            transition: min-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .gadgets-hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .gadget-card {
+                min-height: 440px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gadgets-hero {
+                padding: 40px 0 20px 0;
+            }
+
+            .gadgets-gallery {
+                margin-top: -20px;
+            }
+
+            .gadget-card {
+                min-height: 420px;
+            }
+        }
+
+        /* Footer Styles (reuse your previous styles) */
+        .site-footer {
+            background-color: #2c2f3b;
+            color: #ffffff;
+            padding: 50px 0 20px 0;
+        }
+
+        .site-footer h5 {
+            color: #6a994e;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .site-footer p {
+            color: #adb5bd;
+            line-height: 1.7;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-about,
+        .footer-contact,
+        .footer-follow {
+            flex: 1;
+        }
+
+        .footer-about {
+            flex-basis: 40%;
+            min-width: 250px;
+        }
+
+        .footer-contact {
+            flex-basis: 30%;
+            min-width: 250px;
+        }
+
+        .footer-follow {
+            flex-basis: 20%;
+            min-width: 150px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #6a994e;
+        }
+
+        .footer-divider {
+            border-color: #495057;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-copyright p {
+            color: #adb5bd;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (unchanged) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <div class="brand-container">
+                <a class="brand-logo" href="#">
+                    <div class="logo-icon">Y</div>
+                    <div class="logo-text">uwaaTech</div>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="web-design.html"><i class="fas fa-laptop-code me-2"></i>
+                                    Web
+                                    Designing</a></li>
+                            <li><a class="dropdown-item" href="web-hosting.html"><i class="fas fa-server me-2"></i> Web
+                                    Hosting</a></li>
+                            <li><a class="dropdown-item" href="video-editing.html"><i class="fas fa-video me-2"></i>
+                                    Video Editing</a></li>
+                            <li><a class="dropdown-item" href="graphics-designing.html"><i
+                                        class="fas fa-paint-brush me-2"></i> Graphics
+                                    Designing</a></li>
+                            <li><a class="dropdown-item" href="thumbnail-designing.html"><i
+                                        class="fas fa-image me-2"></i> Thumbnail Designing</a></li>
+                            <li><a class="dropdown-item" href="cyber-security.html"><i
+                                        class="fas fa-shield-alt me-2"></i> Cyber Security</a></li>
+                            <li><a class="dropdown-item" href="social-media-management.html"><i
+                                        class="fas fa-hashtag me-2"></i> Social Media Management</a></li>
+                            <li><a class="dropdown-item" href="seo.html"><i class="fas fa-search me-2"></i> SEO</a></li>
+                            <li><a class="dropdown-item" href="content-writing.html"><i
+                                        class="fas fa-pen-fancy me-2"></i> Content Writing</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i
+                                        class="fas fa-bullhorn me-2"></i> Digital Marketing</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="all-digital-services.html"><i
+                                        class="fas fa-cubes me-2"></i> All Digital Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="gadjets.html">Gadjets</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gadgets Hero Section -->
+    <section class="gadgets-hero">
+        <div class="container">
+            <h1>Our Innovative Gadgets & Devices</h1>
+            <p>Discover the unique hardware and software gadgets crafted by the YuwaaTech team for learning, security,
+                automation, and fun!</p>
+            <i class="fas fa-microchip fa-4x mb-3" style="color:#fff; opacity:0.3; animation: fadeInDown 2s;"></i>
+        </div>
+    </section>
+
+    <!-- Gadgets Gallery Section -->
+    <section class="gadgets-gallery py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Gadget 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="USB Killer">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-bolt text-warning me-2"></i>USB Killer</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-danger">Hardware</span>
+                                <span class="badge bg-secondary">Security</span>
+                            </div>
+                            <div class="gadget-desc">
+                                A powerful USB device for security testing and hardware resilience research. Created by
+                                our hardware team.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $49.99</div>
+                                <div>Can be used for advanced penetration testing and hardware security research.
+                                    Includes safety instructions.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="WiFi Jammer">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-wifi text-info me-2"></i>WiFi Jammer</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-info text-dark">IoT</span>
+                                <span class="badge bg-warning text-dark">Ethical Hacking</span>
+                            </div>
+                            <div class="gadget-desc">
+                                Portable WiFi jammer for network security demonstrations and ethical hacking workshops.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $39.99</div>
+                                <div>Ideal for controlled environments and educational purposes. Not for illegal use.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="NodeMCU Projects">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-microchip text-primary me-2"></i>NodeMCU Projects
+                            </div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-primary">IoT</span>
+                                <span class="badge bg-success">Automation</span>
+                            </div>
+                            <div class="gadget-desc">
+                                Custom NodeMCU-based IoT gadgets for automation, monitoring, and smart solutions.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $29.99</div>
+                                <div>Includes WiFi-enabled automation modules and sample code for DIY projects.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 4 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="Raspberry Pi Toolkit">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fab fa-raspberry-pi text-danger me-2"></i>Raspberry Pi
+                                Toolkit</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-danger">Prototyping</span>
+                                <span class="badge bg-info text-dark">Education</span>
+                            </div>
+                            <div class="gadget-desc">
+                                Versatile Raspberry Pi setups for prototyping, security, and educational projects.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $59.99</div>
+                                <div>Comes with pre-installed tools and guides for rapid prototyping and learning.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 5 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="Custom Arduino Devices">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fab fa-arduino text-info me-2"></i>Custom Arduino
+                                Devices</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-info text-dark">Robotics</span>
+                                <span class="badge bg-success">STEM</span>
+                            </div>
+                            <div class="gadget-desc">
+                                Innovative Arduino-based gadgets for automation, robotics, and STEM learning.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $34.99</div>
+                                <div>Perfect for students and hobbyists. Includes sensors and project booklets.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 6 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="Smart Home Controller">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-home text-success me-2"></i>Smart Home Controller
+                            </div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-success">Smart Home</span>
+                                <span class="badge bg-primary">Software</span>
+                            </div>
+                            <div class="gadget-desc">
+                                A software-hardware solution to control and automate home appliances from your phone.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $44.99</div>
+                                <div>Supports Android/iOS apps and voice assistants. Easy setup for any home.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 7 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="Digital Attendance System">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-fingerprint text-secondary me-2"></i>Digital
+                                Attendance System</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-secondary">Biometrics</span>
+                                <span class="badge bg-warning text-dark">Software</span>
+                            </div>
+                            <div class="gadget-desc">
+                                A biometric attendance system for schools and offices, built with custom software.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $54.99</div>
+                                <div>Fingerprint and RFID support. Includes reporting software and cloud sync.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gadget 8 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gadget-card h-100">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                            class="gadget-img" alt="Weather Monitoring Station">
+                        <div class="gadget-footer">
+                            <div class="gadget-title"><i class="fas fa-cloud-sun text-primary me-2"></i>Weather
+                                Monitoring Station</div>
+                            <div class="gadget-badges">
+                                <span class="badge bg-primary">Sensors</span>
+                                <span class="badge bg-info text-dark">IoT</span>
+                            </div>
+                            <div class="gadget-desc">
+                                Real-time weather monitoring with sensors and live dashboard, designed by our IoT team.
+                            </div>
+                            <a href="#" class="btn btn-outline-primary gadget-btn read-more-btn">Read More</a>
+                            <div class="gadget-details" style="display:none;">
+                                <hr>
+                                <div><strong>Price:</strong> $64.99</div>
+                                <div>Includes temperature, humidity, and air quality sensors. Web dashboard access.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more gadgets as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h5>About Us</h5>
+                    <p>We are a team of passionate students dedicated to revolutionizing digital services in Nepal.</p>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contact</h5>
+                    <p>Email: info@yuwa.tech<br>Phone: +977 9841234567</p>
+                </div>
+                <div class="footer-follow">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright">
+                <p>&copy; 2025 YuwaaTech. Empowering Digital Nepal.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.read-more-btn').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var card = btn.closest('.gadget-card');
+                    var details = card.querySelector('.gadget-details');
+                    if (card.classList.contains('expanded')) {
+                        card.classList.remove('expanded');
+                        setTimeout(function () {
+                            details.style.display = 'none';
+                        }, 500);
+                    } else {
+                        details.style.display = 'block';
+                        setTimeout(function () {
+                            card.classList.add('expanded');
+                        }, 10);
+                    }
+                    btn.textContent = card.classList.contains('expanded') ? 'Show Less' : 'Read More';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

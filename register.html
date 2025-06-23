@@ -9,7 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --primary-color: #4f46e5;
@@ -168,6 +170,11 @@
             .navbar-nav {
                 margin-left: 1rem;
             }
+
+            .navbar .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
         }
 
         @media (max-width: 991.98px) {
@@ -194,101 +201,110 @@
                 justify-content: center;
             }
         }
+
         /* end navigation */
 
         /* Using some styles from style.css for consistency */
-    .brand-logo {
-        display: inline-flex;
-        align-items: center;
-        text-decoration: none;
-        font-weight: 700;
-        color: inherit;
-    }
-    .logo-icon {
-        background: #4f46e5; /* Accent from style.css */
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        margin-right: 8px;
-    }
-    .logo-text {
-        font-size: 1.7rem;
-        color: #1e3c72; /* Dark blue from style.css */
-    }
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 700;
+            color: inherit;
+        }
 
-    body {
-        background: #fff;
-    }
+        .logo-icon {
+            background: #4f46e5;
+            /* Accent from style.css */
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 8px;
+        }
 
-    .info-panel {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      padding: 2rem;
-    }
-    .info-content h2 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .info-content p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
-    .info-perks p {
-        font-size: 1.05rem;
-        margin-bottom: 0.5rem;
-    }
+        .logo-text {
+            font-size: 1.7rem;
+            color: #1e3c72;
+            /* Dark blue from style.css */
+        }
 
-    .register {
-        min-height: 100vh;
-    }
+        body {
+            background: #fff;
+        }
 
-    .register-heading {
-        font-weight: 700;
-        color: #1e3c72;
-    }
-    
-    .form-control {
-        border-radius: 0.5rem;
-    }
-    
-    .form-floating label {
-        font-size: 0.9rem;
-        padding-top: 0.8rem;
-        opacity: 0.65;
-    }
-    
-    .btn-primary {
-        background-color: #4f46e5;
-        border-color: #4f46e5;
-        border-radius: 0.5rem;
-        padding: 0.9rem 1.5rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-    }
+        .info-panel {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 2rem;
+        }
 
-    .btn-primary:hover {
-        background-color: #3730a3;
-        border-color: #3730a3;
-    }
-    
-    .login-link {
-        color: #4f46e5;
-        font-weight: 500;
-        text-decoration: none;
-    }
-    .login-link:hover {
-      text-decoration: underline;
-    }
+        .info-content h2 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .info-perks p {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .register {
+            min-height: 100vh;
+        }
+
+        .register-heading {
+            font-weight: 700;
+            color: #1e3c72;
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+        }
+
+        .form-floating label {
+            font-size: 0.9rem;
+            padding-top: 0.8rem;
+            opacity: 0.65;
+        }
+
+        .btn-primary {
+            background-color: #4f46e5;
+            border-color: #4f46e5;
+            border-radius: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #3730a3;
+            border-color: #3730a3;
+        }
+
+        .login-link {
+            color: #4f46e5;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
 
         /* Footer Styles */
         .site-footer {
@@ -372,7 +388,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
             <!-- Brand Logo Container - Positioned at far left on large screens -->
@@ -393,7 +409,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -411,126 +427,145 @@
                                     Web
                                     Designing</a></li>
                             <li><a class="dropdown-item" href="web-hosting.html"><i class="fas fa-server me-2"></i> Web
-                                    Hosting</a></li>
+                                    Hosting</a>
+                            </li>
                             <li><a class="dropdown-item" href="video-editing.html"><i class="fas fa-video me-2"></i>
-                                    Video Editing</a></li>
+                                    Video Editing</a>
+                            </li>
                             <li><a class="dropdown-item" href="graphics-designing.html"><i
-                                        class="fas fa-paint-brush me-2"></i> Graphics
+                                        class="fas fa-paint-brush me-2"></i>
+                                    Graphics
                                     Designing</a></li>
                             <li><a class="dropdown-item" href="thumbnail-designing.html"><i
-                                        class="fas fa-image me-2"></i> Thumbnail Designing</a></li>
+                                        class="fas fa-image me-2"></i> Thumbnail
+                                    Designing</a></li>
                             <li><a class="dropdown-item" href="cyber-security.html"><i
-                                        class="fas fa-shield-alt me-2"></i> Cyber Security</a></li>
+                                        class="fas fa-shield-alt me-2"></i> Cyber
+                                    Security</a></li>
                             <li><a class="dropdown-item" href="social-media-management.html"><i
-                                        class="fas fa-hashtag me-2"></i> Social Media Management</a></li>
+                                        class="fas fa-hashtag me-2"></i>
+                                    Social Media Management</a></li>
                             <li><a class="dropdown-item" href="seo.html"><i class="fas fa-search me-2"></i> SEO</a></li>
                             <li><a class="dropdown-item" href="content-writing.html"><i
-                                        class="fas fa-pen-fancy me-2"></i> Content Writing</a></li>
+                                        class="fas fa-pen-fancy me-2"></i> Content
+                                    Writing</a></li>
                             <li><a class="dropdown-item" href="digital-marketing.html"><i
-                                        class="fas fa-bullhorn me-2"></i> Digital Marketing</a></li>
+                                        class="fas fa-bullhorn me-2"></i> Digital
+                                    Marketing</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="all-digital-services.html"><i
-                                        class="fas fa-cubes me-2"></i> All Digital Services</a></li>
+                                        class="fas fa-cubes me-2"></i> All
+                                    Digital Services</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="gadjets.html">Gadjets</a>
+                        <a class="nav-link" href="gadjets.html">Gadjets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-3">
-                    <a href="login.html" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
-                    <a href="register.html" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
+                    <a href="login.html" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i>
+                        Login</a>
+                    <a href="register.html" class="btn btn-primary active"><i class="fas fa-user-plus me-2"></i> Register</a>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- Navigation End -->
+    <!-- Navbar End -->
 
     <div class="container-fluid ps-md-0">
-    <div class="row g-0">
-       <!-- Info Column -->
-      <div class="d-none d-md-flex col-md-5 col-lg-5 info-panel">
-        <div class="info-content">
-            <h2>Join YuwaaTech</h2>
-            <p>Start your journey with us and unlock a world of digital possibilities. From web development to digital marketing, we've got you covered.</p>
-            <div class="info-perks mt-4">
-                <p><i class="fas fa-check-circle me-2"></i> Access exclusive student discounts.</p>
-                <p><i class="fas fa-check-circle me-2"></i> Manage all your services in one place.</p>
-                <p><i class="fas fa-check-circle me-2"></i> Get expert support from our team.</p>
+        <div class="row g-0">
+            <!-- Info Column -->
+            <div class="d-none d-md-flex col-md-5 col-lg-5 info-panel">
+                <div class="info-content">
+                    <h2>Join YuwaaTech</h2>
+                    <p>Start your journey with us and unlock a world of digital possibilities. From web development to
+                        digital marketing, we've got you covered.</p>
+                    <div class="info-perks mt-4">
+                        <p><i class="fas fa-check-circle me-2"></i> Access exclusive student discounts.</p>
+                        <p><i class="fas fa-check-circle me-2"></i> Manage all your services in one place.</p>
+                        <p><i class="fas fa-check-circle me-2"></i> Get expert support from our team.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Column -->
+            <div class="col-md-7 col-lg-7">
+                <div class="register d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <div class="text-center mb-4">
+                                    <a class="brand-logo" href="index.html">
+                                        <div class="logo-icon">Y</div>
+                                        <div class="logo-text">uwaaTech</div>
+                                    </a>
+                                </div>
+                                <h2 class="register-heading mb-4 text-center">Create Your Account</h2>
+
+                                <!-- Register Form -->
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingFullName"
+                                            placeholder="John Doe" required>
+                                        <label for="floatingFullName">Full Name</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingUsername"
+                                            placeholder="johndoe" required>
+                                        <label for="floatingUsername">Username</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com" required>
+                                        <label for="floatingInput">Email address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" id="floatingPassword"
+                                            placeholder="Password" required>
+                                        <label for="floatingPassword">Password</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" id="floatingConfirmPassword"
+                                            placeholder="Confirm Password" required>
+                                        <label for="floatingConfirmPassword">Confirm Password</label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value="" id="agreeTerms"
+                                            required>
+                                        <label class="form-check-label" for="agreeTerms">
+                                            I agree to the <a href="#">Terms and Conditions</a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-grid mb-3">
+                                        <button class="btn btn-lg btn-primary text-uppercase fw-bold"
+                                            type="submit">Register</button>
+                                    </div>
+                                </form>
+
+                                <div class="text-center mt-4">
+                                    <span>Already have an account? </span>
+                                    <a href="login.html" class="login-link">Login here</a>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="index.html" class="text-muted small"><i
+                                            class="fas fa-arrow-left me-1"></i>Back to Home</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
-      <!-- Form Column -->
-      <div class="col-md-7 col-lg-7">
-        <div class="register d-flex align-items-center py-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-9 col-lg-8 mx-auto">
-                <div class="text-center mb-4">
-                     <a class="brand-logo" href="index.html">
-                      <div class="logo-icon">Y</div>
-                      <div class="logo-text">uwaaTech</div>
-                    </a>
-                </div>
-                <h2 class="register-heading mb-4 text-center">Create Your Account</h2>
-                
-                <!-- Register Form -->
-                <form>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingFullName" placeholder="John Doe" required>
-                    <label for="floatingFullName">Full Name</label>
-                  </div>
-                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingUsername" placeholder="johndoe" required>
-                    <label for="floatingUsername">Username</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                    <label for="floatingInput">Email address</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                    <label for="floatingPassword">Password</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
-                    <label for="floatingConfirmPassword">Confirm Password</label>
-                  </div>
-                  
-                  <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="agreeTerms" required>
-                    <label class="form-check-label" for="agreeTerms">
-                      I agree to the <a href="#">Terms and Conditions</a>
-                    </label>
-                  </div>
-
-                  <div class="d-grid mb-3">
-                    <button class="btn btn-lg btn-primary text-uppercase fw-bold" type="submit">Register</button>
-                  </div>
-                </form>
-
-                <div class="text-center mt-4">
-                  <span>Already have an account? </span>
-                  <a href="login.html" class="login-link">Login here</a>
-                </div>
-                 <div class="text-center mt-3">
-                  <a href="index.html" class="text-muted small"><i class="fas fa-arrow-left me-1"></i>Back to Home</a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
     <!-- footer -->
     <footer class="site-footer">
@@ -565,42 +600,55 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
-    // Show welcome message if just logged in
-    document.addEventListener('DOMContentLoaded', function() {
-        if (localStorage.getItem('justLoggedIn') === 'true') {
-            var alert = document.createElement('div');
-            alert.className = 'alert alert-success text-center';
-            alert.textContent = 'Welcome! You have successfully Registered.';
-            setTimeout(function() {
-                alert.remove();
-                localStorage.removeItem('justLoggedIn');
-            }, 3000);
-        }
-    });
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent actual form submission
-        var password = document.getElementById('floatingPassword').value;
-        var confirmPassword = document.getElementById('floatingConfirmPassword').value;
-        // Remove previous error if any
-        var oldError = document.getElementById('confirmPasswordError');
-        if (oldError) oldError.remove();
-        if (password !== confirmPassword) {
-            var error = document.createElement('div');
-            error.id = 'confirmPasswordError';
-            error.className = 'text-danger mb-3';
-            error.textContent = 'Passwords do not match.';
-            var confirmField = document.getElementById('floatingConfirmPassword');
-            confirmField.classList.add('is-invalid');
-            confirmField.parentNode.appendChild(error);
-            confirmField.focus();
-            return;
-        } else {
-            document.getElementById('floatingConfirmPassword').classList.remove('is-invalid');
-        }
-        localStorage.setItem('userLoggedIn', 'true');
-        localStorage.setItem('justLoggedIn', 'true'); // For the one-time welcome message
-        window.location.href = 'index.html';
-    });
+        // Navbar mobile toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        navToggle.onclick = () => {
+            navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+        };
+        navOverlay.onclick = () => {
+            navLinks.classList.remove('open');
+            navOverlay.classList.remove('show');
+        };
+        
+        // Show welcome message if just logged in
+        document.addEventListener('DOMContentLoaded', function () {
+            if (localStorage.getItem('justLoggedIn') === 'true') {
+                var alert = document.createElement('div');
+                alert.className = 'alert alert-success text-center';
+                alert.textContent = 'Welcome! You have successfully Registered.';
+                setTimeout(function () {
+                    alert.remove();
+                    localStorage.removeItem('justLoggedIn');
+                }, 3000);
+            }
+        });
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent actual form submission
+            var password = document.getElementById('floatingPassword').value;
+            var confirmPassword = document.getElementById('floatingConfirmPassword').value;
+            // Remove previous error if any
+            var oldError = document.getElementById('confirmPasswordError');
+            if (oldError) oldError.remove();
+            if (password !== confirmPassword) {
+                var error = document.createElement('div');
+                error.id = 'confirmPasswordError';
+                error.className = 'text-danger mb-3';
+                error.textContent = 'Passwords do not match.';
+                var confirmField = document.getElementById('floatingConfirmPassword');
+                confirmField.classList.add('is-invalid');
+                confirmField.parentNode.appendChild(error);
+                confirmField.focus();
+                return;
+            } else {
+                document.getElementById('floatingConfirmPassword').classList.remove('is-invalid');
+            }
+            localStorage.setItem('userLoggedIn', 'true');
+            localStorage.setItem('justLoggedIn', 'true'); // For the one-time welcome message
+            window.location.href = 'index.html';
+        });
     </script>
 </body>
 

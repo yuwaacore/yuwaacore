@@ -13,6 +13,15 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Dropdown on hover for desktop */
+    @media (min-width: 992px) {
+      .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -96,34 +105,35 @@
   <!-- Navbar End -->
 
   <!-- Hero Section -->
-  <header class="hero">
-    <div class="carousel-bg">
-      <div class="carousel-images">
-        <img src="1.webp" class="carousel-img active" alt="User Image 1">
-        <img src="4.webp" class="carousel-img" alt="User Image 4">
-        <img src="9.webp" class="carousel-img" alt="User Image 9">
-        <img src="10.webp" class="carousel-img" alt="User Image 10">
-        <img src="11.jpg" class="carousel-img" alt="User Image 11">
-      </div>
-    </div>
-    <div class="container hero-content">
-      <h1>All Digital Solutions for Business & Startups</h1>
-      <p class="typing-effect"></p>
-      <p class="description">We help you grow with video editing, web development, cybersecurity, social media,
-        and more. Young, creative, and affordable—TechYuwaa is your one-stop digital partner.</p>
-      <a href="all-digital-services.html" class="cta-btn">Explore Services</a>
-      <!-- Search Bar -->
-      <div class="hero-search">
-        <div class="search-container">
-          <input type="text" class="search-input" placeholder="Search for services, projects, or solutions...">
-          <button class="search-btn">
-            <i class="fas fa-search"></i>
-          </button>
+    <header class="hero">
+        <div class="carousel-bg">
+            <div class="carousel-images">
+                <img src="1.webp" class="carousel-img active" alt="User Image 1">
+                <img src="4.webp" class="carousel-img" alt="User Image 4">
+                <img src="9.webp" class="carousel-img" alt="User Image 9">
+                <img src="10.webp" class="carousel-img" alt="User Image 10">
+                <img src="11.jpg" class="carousel-img" alt="User Image 11">
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
-  <!-- Hero Section End -->
+        <div class="container hero-content">
+            <h1>All Digital Solutions for Business & Startups</h1>
+            <p class="typing-effect"></p>
+            <p class="description">We help you grow with video editing, web development, cybersecurity, social media,
+                and more. Young, creative, and affordable—TechYuwaa is your one-stop digital partner.</p>
+            <a href="all-digital-services.html" class="cta-btn">Explore Services</a>
+            <!-- Search Bar -->
+            <div class="hero-search">
+                <div class="search-container">
+                    <input type="text" class="search-input"
+                        placeholder="Search for services, projects, or solutions...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section End -->
 
   <!-- About Section -->
   <section id="about" class="about-section py-5 bg-light">
@@ -460,8 +470,8 @@
     </div>
   </footer>
   <!-- Footer End -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script>
-
     // Navbar mobile toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -474,6 +484,26 @@
       navLinks.classList.remove('open');
       navOverlay.classList.remove('show');
     };
+
+    // Dropdown hover accessibility for desktop
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth >= 992) {
+        document.querySelectorAll('.navbar .nav-item.dropdown').forEach(function (dropdown) {
+          dropdown.addEventListener('mouseenter', function () {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+            const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+            if (toggle) toggle.setAttribute('aria-expanded', 'true');
+          });
+          dropdown.addEventListener('mouseleave', function () {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+            const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
 
     // Make gadget cards clickable except the Read More button
     document.addEventListener('DOMContentLoaded', function () {
@@ -506,64 +536,68 @@
       }
     });
 
-    // Simple Carousel Functionality
-    const images = document.querySelectorAll('.carousel-img');
-    let current = 0;
+  // Simple Carousel Functionality
+        const images = document.querySelectorAll('.carousel-img');
+        let current = 0;
 
-    function showSlide(idx) {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === idx);
-      });
-      current = idx;
-    }
+        function showSlide(idx) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === idx);
+            });
+            current = idx;
+        }
 
-    function nextSlide() {
-      showSlide((current + 1) % images.length);
-    }
+        function nextSlide() {
+            showSlide((current + 1) % images.length);
+        }
 
-    setInterval(nextSlide, 3000);
+        setInterval(nextSlide, 3000);
 
-    // Typewriter Effect
-    const services = [
-      "Video Editing & Thumbnail Design",
-      "Web Development & Web Hosting",
-      "Cyber Security & SEO Optimization",
-      "Social Media Management & Content Writing",
-      "Digital Marketing & Graphics Designing"
-    ];
-    let serviceIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingElement = document.querySelector('.typing-effect');
+        // Typewriter Effect
+        document.addEventListener('DOMContentLoaded', function () {
+          console.log('Typewriter script running');
+          const services = [
+              "Video Editing & Thumbnail Design",
+              "Web Development & Web Hosting",
+              "Cyber Security & SEO Optimization",
+              "Social Media Management & Content Writing",
+              "Digital Marketing & Graphics Designing"
+          ];
+          let serviceIndex = 0;
+          let charIndex = 0;
+          let isDeleting = false;
+          const typingElement = document.querySelector('.typing-effect');
+          if (!typingElement) {
+            console.warn('Typewriter: .typing-effect element not found!');
+            return;
+          } else {
+            console.log('Typewriter: .typing-effect element found.');
+          }
 
-    function type() {
-      if (!typingElement) return;
+          function type() {
+              const currentService = services[serviceIndex];
+              const currentText = isDeleting
+                  ? currentService.substring(0, charIndex - 1)
+                  : currentService.substring(0, charIndex + 1);
+              typingElement.textContent = currentText;
 
-      const currentService = services[serviceIndex];
-      const currentText = isDeleting
-        ? currentService.substring(0, charIndex - 1)
-        : currentService.substring(0, charIndex + 1);
-      typingElement.textContent = currentText;
+              let typeSpeed = isDeleting ? 75 : 150;
 
-      let typeSpeed = isDeleting ? 75 : 150;
+              if (!isDeleting && charIndex === currentService.length) {
+                  typeSpeed = 2000; // Pause at end of word
+                  isDeleting = true;
+              } else if (isDeleting && charIndex === 0) {
+                  isDeleting = false;
+                  serviceIndex = (serviceIndex + 1) % services.length;
+                  typeSpeed = 500; // Pause before typing new word
+              }
 
-      if (!isDeleting && charIndex === currentService.length) {
-        typeSpeed = 2000; // Pause at end of word
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        serviceIndex = (serviceIndex + 1) % services.length;
-        typeSpeed = 500; // Pause before typing new word
-      }
+              charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+              setTimeout(type, typeSpeed);
+          }
 
-      charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
-      setTimeout(type, typeSpeed);
-    }
-
-    type();
-
+          type();
+        });
   </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
-
 </html>

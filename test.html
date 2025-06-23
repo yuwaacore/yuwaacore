@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --primary-color: #4f46e5;
@@ -169,6 +170,11 @@
             .navbar-nav {
                 margin-left: 1rem;
             }
+
+            .navbar .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
         }
 
         @media (max-width: 991.98px) {
@@ -195,6 +201,184 @@
                 justify-content: center;
             }
         }
+
+        /* Hero Section Styles */
+        /* HERO as background carousel */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%);
+            overflow: hidden;
+        }
+
+        .carousel-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s;
+            z-index: 1;
+        }
+
+        .carousel-img.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5.5px);
+            -webkit-backdrop-filter: blur(5.5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content h1 {
+            color: #000000;
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .typing-effect {
+            color: #FF9D3D;
+            font-size: 1.5rem;
+            font-weight: bold;
+            height: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #FF9D3D;
+        }
+
+        .description {
+            color: #34495e;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cta-btn {
+            background: #ffb347;
+            color: #222;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            background: #4f46e5;
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(79, 70, 229, 0.15);
+        }
+
+        /* Hero Search Bar Styles */
+        .hero-search {
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            padding: 0.25rem 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 0.7rem 1rem;
+            border-radius: 30px;
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        .search-input::placeholder {
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .search-btn {
+            background: #4f46e5;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #3730a3;
+        }
+
+
 
         /* Footer Styles */
         .site-footer {
@@ -358,6 +542,38 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="carousel-bg">
+            <div class="carousel-images">
+                <img src="1.webp" class="carousel-img active" alt="User Image 1">
+                <img src="4.webp" class="carousel-img" alt="User Image 4">
+                <img src="9.webp" class="carousel-img" alt="User Image 9">
+                <img src="10.webp" class="carousel-img" alt="User Image 10">
+                <img src="11.jpg" class="carousel-img" alt="User Image 11">
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1>All Digital Solutions for Business & Startups</h1>
+            <p class="typing-effect"></p>
+            <p class="description">We help you grow with video editing, web development, cybersecurity, social media,
+                and more. Young, creative, and affordable—TechYuwaa is your one-stop digital partner.</p>
+            <a href="all-digital-services.html" class="cta-btn">Explore Services</a>
+            <!-- Search Bar -->
+            <div class="hero-search">
+                <div class="search-container">
+                    <input type="text" class="search-input"
+                        placeholder="Search for services, projects, or solutions...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section End -->
+
+
     <!-- footer -->
     <footer class="site-footer">
         <div class="container">
@@ -390,6 +606,84 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script>
+
+        // Simple Carousel Functionality
+        const images = document.querySelectorAll('.carousel-img');
+        let current = 0;
+
+        function showSlide(idx) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === idx);
+            });
+            current = idx;
+        }
+
+        function nextSlide() {
+            showSlide((current + 1) % images.length);
+        }
+
+        setInterval(nextSlide, 3000);
+
+        // Typewriter Effect
+        const services = [
+            "Video Editing & Thumbnail Design",
+            "Web Development & Web Hosting",
+            "Cyber Security & SEO Optimization",
+            "Social Media Management & Content Writing",
+            "Digital Marketing & Graphics Designing"
+        ];
+        let serviceIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.querySelector('.typing-effect');
+
+        function type() {
+            if (!typingElement) return;
+
+            const currentService = services[serviceIndex];
+            const currentText = isDeleting
+                ? currentService.substring(0, charIndex - 1)
+                : currentService.substring(0, charIndex + 1);
+            typingElement.textContent = currentText;
+
+            let typeSpeed = isDeleting ? 75 : 150;
+
+            if (!isDeleting && charIndex === currentService.length) {
+                typeSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                serviceIndex = (serviceIndex + 1) % services.length;
+                typeSpeed = 500; // Pause before typing new word
+            }
+
+            charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+            setTimeout(type, typeSpeed);
+        }
+
+        type();
+
+        // Dropdown hover accessibility for desktop
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth >= 992) {
+                document.querySelectorAll('.navbar .nav-item.dropdown').forEach(function (dropdown) {
+                    dropdown.addEventListener('mouseenter', function () {
+                        const menu = dropdown.querySelector('.dropdown-menu');
+                        if (menu) menu.classList.add('show');
+                        const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                    });
+                    dropdown.addEventListener('mouseleave', function () {
+                        const menu = dropdown.querySelector('.dropdown-menu');
+                        if (menu) menu.classList.remove('show');
+                        const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

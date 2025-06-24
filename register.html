@@ -636,6 +636,18 @@
             }
         });
 
+        // Close navbar on outside click for small screens
+        const navbarCollapse = document.getElementById('navbarContent');
+        document.addEventListener('click', function (e) {
+            const isNavbarOpen = navbarCollapse.classList.contains('show');
+            const isNavbarToggler = e.target.closest('.navbar-toggler');
+            const isInsideNavbar = e.target.closest('#navbarContent');
+            if (window.innerWidth < 992 && isNavbarOpen && !isNavbarToggler && !isInsideNavbar) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+
         // Show welcome message if just logged in
         document.addEventListener('DOMContentLoaded', function () {
             if (localStorage.getItem('justLoggedIn') === 'true') {

@@ -535,7 +535,8 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-3">
-                    <a href="login.html class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                    <a href="login.html class=" btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i>
+                        Login</a>
                     <a href="register.html" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
                 </div>
             </div>
@@ -681,6 +682,18 @@
                         if (toggle) toggle.setAttribute('aria-expanded', 'false');
                     });
                 });
+            }
+        });
+
+        // Close navbar on outside click for small screens
+        const navbarCollapse = document.getElementById('navbarContent');
+        document.addEventListener('click', function (e) {
+            const isNavbarOpen = navbarCollapse.classList.contains('show');
+            const isNavbarToggler = e.target.closest('.navbar-toggler');
+            const isInsideNavbar = e.target.closest('#navbarContent');
+            if (window.innerWidth < 992 && isNavbarOpen && !isNavbarToggler && !isInsideNavbar) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                bsCollapse.hide();
             }
         });
     </script>

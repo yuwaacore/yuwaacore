@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Digital Services - YuwaaTech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <!-- Bootstrap CSS -->
@@ -419,7 +420,8 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex gap-3">
-                    <a href="login.html" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i> Login</a>
+                    <a href="login.html" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt me-2"></i>
+                        Login</a>
                     <a href="register.html" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Register</a>
                 </div>
             </div>
@@ -431,7 +433,8 @@
     <header class="all-services-hero text-center">
         <div class="container">
             <h1 class="display-4 fw-bold mb-3">Content, Story & Script Writing</h1>
-            <p class="lead mb-0">Professional writing services for blogs, brands, YouTube, and more—crafted to engage, inspire, and convert.</p>
+            <p class="lead mb-0">Professional writing services for blogs, brands, YouTube, and more—crafted to engage,
+                inspire, and convert.</p>
         </div>
     </header>
 
@@ -441,7 +444,9 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-3">Content Writing</h2>
-                    <p class="lead mb-3">Boost your brand, website, or project with high-quality, SEO-optimized content. Our writers deliver engaging articles, blog posts, website copy, and more—tailored to your audience and goals.</p>
+                    <p class="lead mb-3">Boost your brand, website, or project with high-quality, SEO-optimized content.
+                        Our writers deliver engaging articles, blog posts, website copy, and more—tailored to your
+                        audience and goals.</p>
                     <ul class="mb-4">
                         <li>✔️ Blog & Article Writing</li>
                         <li>✔️ Website & Landing Page Content</li>
@@ -451,7 +456,8 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow mb-3" alt="Content Writing Illustration">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80"
+                        class="img-fluid rounded shadow mb-3" alt="Content Writing Illustration">
                 </div>
             </div>
         </div>
@@ -463,7 +469,8 @@
             <div class="row align-items-center g-5 flex-row-reverse">
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-3">Story Writing</h2>
-                    <p class="lead mb-3">Bring your ideas to life with creative storytelling. We craft compelling short stories, brand stories, and narratives for campaigns, books, and digital media.</p>
+                    <p class="lead mb-3">Bring your ideas to life with creative storytelling. We craft compelling short
+                        stories, brand stories, and narratives for campaigns, books, and digital media.</p>
                     <ul class="mb-4">
                         <li>✔️ Short Stories & Fiction</li>
                         <li>✔️ Brand & Founder Stories</li>
@@ -472,7 +479,8 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow mb-3" alt="Story Writing Illustration">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=500&q=80"
+                        class="img-fluid rounded shadow mb-3" alt="Story Writing Illustration">
                 </div>
             </div>
         </div>
@@ -484,7 +492,8 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-3">Script Writing</h2>
-                    <p class="lead mb-3">From YouTube videos to business presentations, our scriptwriters deliver clear, creative, and impactful scripts for any platform or audience.</p>
+                    <p class="lead mb-3">From YouTube videos to business presentations, our scriptwriters deliver clear,
+                        creative, and impactful scripts for any platform or audience.</p>
                     <ul class="mb-4">
                         <li>✔️ YouTube & Video Scripts</li>
                         <li>✔️ Podcast & Audio Scripts</li>
@@ -493,7 +502,8 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow mb-3" alt="Script Writing Illustration">
+                    <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=500&q=80"
+                        class="img-fluid rounded shadow mb-3" alt="Script Writing Illustration">
                 </div>
             </div>
         </div>
@@ -537,7 +547,19 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-
+    <script>
+        // Close navbar on outside click for small screens
+        const navbarCollapse = document.getElementById('navbarContent');
+        document.addEventListener('click', function (e) {
+            const isNavbarOpen = navbarCollapse.classList.contains('show');
+            const isNavbarToggler = e.target.closest('.navbar-toggler');
+            const isInsideNavbar = e.target.closest('#navbarContent');
+            if (window.innerWidth < 992 && isNavbarOpen && !isNavbarToggler && !isInsideNavbar) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    </script>
 </body>
 
 </html>

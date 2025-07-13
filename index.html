@@ -415,7 +415,8 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="mb-4 text-center">Contact Us</h2>
-      <form class="contact-form p-4 rounded shadow-sm bg-white mx-auto" style="max-width: 500px;">
+      <form class="contact-form p-4 rounded shadow-sm bg-white mx-auto" style="max-width: 500px;" name="contact" data-netlify="true" method="POST">
+          <input type="hidden" name="form-name" value="contact" />
         <div class="mb-3">
           <label for="contactName" class="form-label fw-semibold">Full Name</label>
           <input type="text" class="form-control" id="contactName" placeholder="Enter your full name" required>
